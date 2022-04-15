@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:ital,wght@0,100;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,500;1,600;1,700;1,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  body {
+     @apply font-['Inconsolata'] text-gray-900;
+  }
+
+  * {
+    @apply transition-all duration-100;
+  }
+
+  .container {
+    @apply md:w-[1200px] mx-auto px-5 md:px-0;
+  }
+
+  .btn {
+    @apply rounded-2xl text-white font-semibold;
+  }
+
+  .btn-md {
+    @apply py-4
+  }
+
+  .btn:hover {
+    @apply opacity-80;
+  }
+
+  .page-wrapper {
+    @apply relative min-h-[100vh] bg-pink-50;
+  }
+
+  .form-control {
+    @apply w-full py-5 px-5 rounded-2xl bg-gray-100 placeholder-gray-400 font-bold text-2xl focus:outline-0;
+  }
+
+  .form-group {
+    @apply relative z-20;
+  }
+
+  .form-group label,.form-group span {
+    @apply text-gray-200 text-sm;
+  }
+
+    .table-responsive {
+      @apply overflow-x-auto overflow-y-hidden max-w-full;
+    }
+
+    .table {
+      @apply min-w-full;
+    }
+
+    .table tbody td {
+      @apply py-4 px-6 whitespace-nowrap tracking-wider text-sm text-left text-gray-700 ;
+    }
+
+    .table thead th {
+      @apply py-3 px-6 text-sm font-semibold tracking-wider text-left text-gray-700; 
+    }
+
+    .table tbody i {
+      @apply text-xl;
+    }
+
+    .table thead {
+      @apply border-b
+    }
+
+    .table-striped tbody tr {
+      @apply odd:bg-white even:bg-gray-100
+    } 
+
+    .modal-wrapper {
+    @apply overflow-x-hidden overflow-auto fixed top-0 h-full w-full left-0 z-50;
+  }
+
+  .modal-inner-wrapper {
+    @apply flex items-center justify-center min-h-full w-full p-5 after:bg-black after:z-[100] after:absolute after:top-0 after:left-0 after:h-full after:w-full after:opacity-50;
+  }
+
+  .modal-body {
+    @apply rounded-xl bg-white p-7 relative z-[300] md:w-3/4 lg:w-1/2 space-y-5; 
+  }
+  
+  .hide-modal {
+    @apply hidden;
+  }
+
+  .show-modal {
+    /*@apply opacity-100 ;*/
+  }
+
+
+  .error {
+    @apply text-xs text-red-600
+  }
+  
+}
