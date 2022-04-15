@@ -4,10 +4,15 @@ import Loader from "/components/Loader";
 import { onSnapshot, query, orderBy, limit } from  "firebase/firestore";
 import { useToasts } from 'react-toast-notifications';
 import { transactionTable } from "/firebase";
+import type { AppProps } from 'next/app';
 
 const q = query(transactionTable, orderBy('created_at','desc'), limit(4));
 
-const Layout = ({children} : children) => {
+interface LayoutProps {
+	children : React.ReactNode
+} 
+
+const Layout = ({children} : LayoutProps ) => {
 
 	const { addToast } = useToasts();
 

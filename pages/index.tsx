@@ -17,8 +17,8 @@ const styles = {
 const Home = () => {
 
     const { connectWallet, data, setData, web3, saveTransaction } : any = useTransactionContext();
-    const addressInput  = useRef();
-    const amountInput = useRef();
+    const addressInput  = useRef<any>();
+    const amountInput = useRef<any>();
 
 
 
@@ -32,11 +32,11 @@ const Home = () => {
             from: address,
             to: addressTo,
             value: amount
-        }).on('transactionHash', function(hash){
+        }).on('transactionHash', (hash : string) => {
             
              setData({...data,loading : !data.loading})
 
-        }).once('confirmation', (confirmationNumber, receipt) => { 
+        }).once('confirmation', (confirmationNumber : number, receipt : any) => { 
 
                   setData({...data,loading : false})
 
@@ -46,11 +46,11 @@ const Home = () => {
 
                   //Clear Field
 
-                  amountInput.current.value = "";
-                  addressInput.current.value = "";
+                  amountInput.current.value =  "";
+                  addressInput.current.value =  "";
 
         })
-        .on('error', (err) => {
+        .on('error', (err : any) => {
 
             console.error(err)
             setData({...data,loading : false})

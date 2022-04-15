@@ -6,7 +6,7 @@ const styles = {
 }
 
 const Header = () => {
-  const [selectedNav, setSelectedNav] : string = useState('Swap');
+  const [selectedNav, setSelectedNav] = useState<string>('Swap');
   const { connectWallet, data} : any = useTransactionContext();
 
 	return (

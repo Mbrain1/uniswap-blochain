@@ -1,7 +1,7 @@
 import '../styles/index.css';
 import type { AppProps } from 'next/app';
 import { TransactionProvider } from "/context/TransactionContext";
-import Layout from "/layouts";
+import Layout from "/layouts/Layout";
 import { ToastProvider } from 'react-toast-notifications';
 import TransactionHistory from "/components/TransactionHistory";
 

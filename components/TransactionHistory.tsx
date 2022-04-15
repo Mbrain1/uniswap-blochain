@@ -1,6 +1,7 @@
 import React from 'react'
 
-const TransactionHistory = ({ children } ) => {
+
+const TransactionHistory = ({ children } : any ) => {
 	const { amount, created_at, to, trxnHash } = children;
 	const time = created_at.seconds.toDate();
 	return (
