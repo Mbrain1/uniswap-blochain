@@ -2,18 +2,15 @@ import React, { useState } from 'react'
 import { useTransactionContext } from "/context/TransactionContext";
 
 const styles = {
-    header: `px-5 py-3 flex justify-between items-center`
+    header: `px-5 py-3 flex justify-between items-center w-full`
 }
 
 const Header = () => {
   const [selectedNav, setSelectedNav] = useState<string>('Swap');
   const { connectWallet, data} : any = useTransactionContext();
 
-	return (
-		 <header className={`${styles.header}`}>
-            <img src="/images/ethCurrency.png" className="h-10 w-auto" />
-
-            <div className={`p-1 bg-white rounded-2xl`}>
+  const nav = (dynamicClass : string) => {
+     return (<div className={`p-1 bg-white rounded-2xl ${dynamicClass}`}>
                 {['Swap','Pool','Vote','Charts'].map((item: string, index: number) => 
                 <button 
                         key={index}
@@ -21,7 +18,14 @@ const Header = () => {
                         className={`${selectedNav == item && 'bg-gray-100 font-bold'} rounded-2xl py-1 px-4`}>
                     {item}
                 </button>)}
-            </div>
+      </div>)
+  }
+	return (
+    <header className={`flex flex-col items-center`}>
+		 <div className={`${styles.header}`}>
+            <img src="/images/ethCurrency.png" className="h-10 w-auto" />
+
+            {nav('hidden md:block')}
 
             <div className={``}>
             {data.address.length === 0 ?
@@ -34,7 +38,9 @@ const Header = () => {
             }
 
             </div>
-        </header>	)
+        </div>
+          {nav('inline-block md:hidden')}	
+      </header>)
 }
 
 export default Header

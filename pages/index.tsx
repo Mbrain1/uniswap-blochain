@@ -31,7 +31,7 @@ const Home = () => {
         web3.eth.sendTransaction({
             from: address,
             to: addressTo,
-            value: amount
+            value: web3.utils.toWei(amount.toString(), 'ether')
         }).on('transactionHash', (hash : string) => {
             
              setData({...data,loading : !data.loading})
@@ -101,7 +101,10 @@ const Home = () => {
 
                     <div className={`form-group`}>
                         {data.address.length === 0 ? 
-                        <button className={`btn btn-md text-center bg-pink-200 text-pink-600 w-full`}>Connect Wallet</button>
+                        <button 
+                            onClick={() => connectWallet()}
+                            type="button"
+                            className={`btn btn-md text-center bg-pink-200 text-pink-600 w-full`}>Connect Wallet</button>
                         :
                         <button 
                             onClick={() => sendTransaction()}
