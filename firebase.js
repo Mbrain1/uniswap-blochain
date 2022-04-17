@@ -28,7 +28,9 @@ export const db = getFirestore();
 
 const userTable = collection(db, 'users');
 
+const listedTokensTable = collection(db, 'listed_tokens');
+
 const transactionTable = collection(db, 'transactions');
 
-export { userTable, transactionTable };
+export { userTable, transactionTable, listedTokensTable };
 

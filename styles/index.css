@@ -75,7 +75,7 @@
     } 
 
     .modal-wrapper {
-    @apply overflow-x-hidden overflow-auto fixed top-0 h-full w-full left-0 z-50;
+    @apply overflow-x-hidden overflow-auto fixed top-0 z-50 h-screen w-full left-0;
   }
 
   .modal-inner-wrapper {
@@ -83,7 +83,7 @@
   }
 
   .modal-body {
-    @apply rounded-xl bg-white p-7 relative z-[300] md:w-3/4 lg:w-1/2 space-y-5; 
+    @apply rounded-xl bg-white p-7 relative z-[300] w-full md:w-3/4 lg:w-1/2 space-y-5; 
   }
   
   .hide-modal {

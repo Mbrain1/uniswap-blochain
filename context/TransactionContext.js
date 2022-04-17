@@ -1,8 +1,8 @@
 import { useState, createContext, useContext, useEffect } from "react"
-// import { contractABI, contractAddress } from '/src/lib/constant'
 import Web3 from 'web3'
 import { userTable, transactionTable } from "/firebase";
 import { addDoc, serverTimestamp } from  "firebase/firestore";
+import Toastr from 'toastr2';
 
 export const TransactionContext = createContext()
 
@@ -16,14 +16,22 @@ export const TransactionProvider = ({children}) => {
     const [data, setData] = useState({
         address : '',
         addressTo : '',
+        tokenAddress : '',
+        tokens : [],
+        currentToken: { symbol : 'ETH', address : '', name : '' },
+        currentPage : 'Swap',
         amount: 0,
         loading : false
     });
+
+    const [toastr, setToastr] = useState('');
 
     useEffect(() => {
        
         isWalletConnected(); //Checks if Wallet is connected on Initial load
         isWalletChanged();  //Check if Wallet Connection has been Updated or changed
+
+        setToastr(new Toastr());
 
     },[])
 
@@ -75,7 +83,7 @@ export const TransactionProvider = ({children}) => {
     }
    
     return (
-    <TransactionContext.Provider value={{ connectWallet, data, setData, web3, saveTransaction }}>
+    <TransactionContext.Provider value={{ connectWallet, data, setData, web3, saveTransaction, toastr }}>
         {children}
     </TransactionContext.Provider>
     )

@@ -19,14 +19,14 @@ interface LayoutProps {
 
 const Layout = ({children} : LayoutProps ) => {
 
-	const { addToast } = useToasts();
+	// const { addToast } = useToasts();
 
 	  useEffect(() => {
 
 	     onSnapshot(q, (snapshot) => {
 
 	        snapshot.docs.map((doc) => {
-	          addToast({...doc.data()});
+	          // addToast({...doc.data()});
 	        });
 
 	        

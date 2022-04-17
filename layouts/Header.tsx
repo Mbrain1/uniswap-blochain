@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useTransactionContext } from "/context/TransactionContext";
 
 const styles = {
@@ -6,16 +6,16 @@ const styles = {
 }
 
 const Header = () => {
-  const [selectedNav, setSelectedNav] = useState<string>('Swap');
-  const { connectWallet, data} : any = useTransactionContext();
+
+  const { connectWallet, data, setData } : any = useTransactionContext();
 
   const nav = (dynamicClass : string) => {
      return (<div className={`p-1 bg-white rounded-2xl ${dynamicClass}`}>
                 {['Swap','Pool','Vote','Charts'].map((item: string, index: number) => 
                 <button 
                         key={index}
-                        onClick={() => setSelectedNav(item)}
-                        className={`${selectedNav == item && 'bg-gray-100 font-bold'} rounded-2xl py-1 px-4`}>
+                        onClick={() => setData({...data, currentPage : item})}
+                        className={`${data.currentPage == item && 'bg-gray-100 font-bold'} rounded-2xl py-1 px-4`}>
                     {item}
                 </button>)}
       </div>)
