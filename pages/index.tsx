@@ -28,7 +28,7 @@ const Home = () => {
               </p>
 
               <div className={`text-white flex items-center space-x-3`}>
-                  <a href="https://github.com/Mbrain1/uniswap-blochain" target="_blank"><AiOutlineGithub size={25} /></a>
+                  <a href="https://github.com/mfonabasiudobia/uniswap-blochain" target="_blank"><AiOutlineGithub size={25} /></a>
                   <a href="https://www.linkedin.com/in/mfonabasi-udobia-a84128217" target="_blank"><AiOutlineLinkedin size={25} /></a>
               </div>
               <div>
