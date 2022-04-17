@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { FaTimes } from "react-icons/Fa";
+import { FaTimes } from "react-icons/fa";
 
 interface LayoutProps {
 	children : React.ReactNode,
