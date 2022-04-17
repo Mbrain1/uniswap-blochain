@@ -4830,6 +4830,10 @@
   "resolved" "https://registry.npmjs.org/statuses/-/statuses-2.0.1.tgz"
   "version" "2.0.1"
 
+"str-utils@file:../../../npm-packages/str-utils":
+  "resolved" "file:../../../npm-packages/str-utils"
+  "version" "1.0.0"
+
 "strict-uri-encode@^1.0.0":
   "integrity" "sha1-J5siXfHVgrH1TmWt3UNS4Y+qBxM="
   "resolved" "https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz"

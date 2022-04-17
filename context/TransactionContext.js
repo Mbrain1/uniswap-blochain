@@ -76,6 +76,7 @@ export const TransactionProvider = ({children}) => {
           trxnHash : trxnHash,
           to : to,
           amount : amount,
+          symbol : data.currentToken.symbol,
           created_at: serverTimestamp()
 
          }).catch(console.log)
