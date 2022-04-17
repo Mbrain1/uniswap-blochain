@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Header from "./Header"; 
 import Loader from "/components/Loader";
 import { onSnapshot, query, orderBy, limit, where } from  "firebase/firestore";
 import { useToasts } from 'react-toast-notifications';
@@ -36,11 +35,8 @@ const Layout = ({children} : LayoutProps ) => {
 
 	return (
 		<>
-		<Loader />
-		<div className="page-wrapper space-y-10">
-			 <Header />
+			<Loader />
 			{ children }
-		</div>
 		</>
 	)
 }

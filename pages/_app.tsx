@@ -11,7 +11,9 @@ const MyApp = ({ Component, pageProps } : AppProps) => {
     <TransactionProvider>
       <ToastProvider components={{ Toast: TransactionHistory }} autoDismiss={true} autoDismissTimeout={10000} placement="bottom-right">
           <Layout>
-            <Component {...pageProps} />
+            <div className="page-wrapper space-y-10">
+               <Component {...pageProps} />
+            </div>
           </Layout>
     </ToastProvider>
     </TransactionProvider>

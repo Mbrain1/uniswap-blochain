@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTransactionContext } from "/context/TransactionContext";
+import Link from "next/link";
 
 const styles = {
     header: `px-5 py-3 flex justify-between items-center w-full`
@@ -23,7 +24,7 @@ const Header = () => {
 	return (
     <header className={`flex flex-col items-center`}>
 		 <div className={`${styles.header}`}>
-            <img src="/images/ethCurrency.png" className="h-10 w-auto" />
+            <Link href="/"><a><img src="/images/ethCurrency.png" className="h-10 w-auto" /></a></Link>
 
             {nav('hidden md:block')}
 

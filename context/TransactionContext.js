@@ -40,7 +40,7 @@ export const TransactionProvider = ({children}) => {
             const accounts =  await web3.eth.requestAccounts();
             setData({...data, address: accounts[0]}); //Save Wallet Address
         }else{
-            alert("Please Install Metamask")
+            toastr.error("Please Install Metamask")
         }
     }
 
